@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="./css/login.css" rel="stylesheet">
+</head>
+<body>
+        <div class="header">
+            <a href="./All Blogs/blogs.html" class="logo"><b>Personal Blogging App</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="./signup.html" class="signup" >Sign Up</a>
+            <p>|</p>
+      </div>
+      
+    <div class="login-container">
+        <h1 >Login</h1>
+        <form id="login-form" >
+          <input type="email" placeholder="Email" id="email" required>
+          <input type="password" placeholder="Password" id="password" required>
+          <p class="error" id="loginError"></p>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+      <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBHJOo8I2lba7xqKLvJ7mVmHQ-AgU0qTgk",
+//   authDomain: "first-smit-web.firebaseapp.com",
+//   databaseURL: "https://first-smit-web-default-rtdb.firebaseio.com",
+//   projectId: "first-smit-web",
+//   storageBucket: "first-smit-web.appspot.com",
+//   messagingSenderId: "119305629427",
+//   appId: "1:119305629427:web:a8fdce708682ba85ec9186",
+//   measurementId: "G-GZCV73MBTX"
+// };
+// const app = firebase.initializeApp(firebaseConfig);
+
+const signinForm = document.getElementById('login-form');
+signinForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+
+        // Sign-in successful
+        const user = userCredential.user;
+        console.log('User signed in successfully.');
+
+        // Redirect to choose.html
+        window.location.href = './dashboard/dash.html';
+    } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(errorCode + ': ' + errorMessage);
+
+        if (errorCode === 'auth/user-not-found') {
+            console.log('Email not registered. Please register.');
+        } else {
+            // Handle other sign-in errors if needed
+        }
+    }
+});
+</script>
+
+</body>
+</html>
