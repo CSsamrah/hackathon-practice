@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background:  #7749F8;
+    color: white;
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #6a00a9;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 60px;
+  }
+  .signup{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    justify-content: right;
+  }
+  .logout{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 60px;
+  }
+  .header a:hover{
+    color: #e2cc0a;
+  }
+  .profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #profile-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 95%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  #profile-form input:hover{
+    border-color:#8d03b3;
+  }
+  #profile-form button {
+    background-color:#8d03b3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 170px;
+  }
+
+  #profile-form button:hover {
+    background-color: #9b61ed;
+  }
+  /* Style for hiding the default file input appearance */
+input[type="file"] {
+    display: none;
+  }
+  
+  /* Styling for the custom profile picture upload button */
+  #profilePictureLabel {
+    display: inline-block;
+    background-image: url(../image/pngtree-avatar-bussinesman-man-profile-icon-vector-illustration-png-image_7268049.png);
+    background-color: transparent;
+    color: #ffffff00;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 10px;
+    cursor: pointer;
+    /* top: 5px; */
+  }
+  #profilePicture:hover{
+    border-color:#8d03b3;
+  }
+  #profilePictureLabel::after {
+    content: 'Upload Profile Picture';
+  }
+  #profilePicture::after {
+    content: attr(data-file);
+  }
+  
+  #profileImagePreview {
+    display: inline-block;
+    margin-top: 10px;
+    max-width: 100px;
+    max-height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  #profileImagePreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .profile-container h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #111111; 
+  }
+  

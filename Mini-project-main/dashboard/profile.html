@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="../css/profile.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo"><b>Personal Blogging App</b></a>
+        <div class="header-links">
+          <span id="usernameLink"></span>
+          <span>|</span>
+          <a href="../index.html" class="logout">Logout</a>
+        </div>
+      </div>
+    <div class="profile-container">
+        <h1>Profile</h1>
+        <form id="profile-form">
+          <div id="profileImagePreview">
+          <label id="profilePictureLabel" for="profilePicture">Upload Profile Picture</label>
+          <input type="file" accept="image/*" id="profilePicture" data-file="">
+        </div>
+          <input type="text" id="username" placeholder="Username">
+          <input type="password" id="oldPassword" placeholder="Old Password">
+          <input type="password" id="newPassword" placeholder="New Password">
+          <input type="password" id="confirmPassword" placeholder="Confirm New Password">
+          <button type="submit" id="update-button">Save Changes</button>
+        </form>
+      </div>
+      
+      <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+    <script>
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBHJOo8I2lba7xqKLvJ7mVmHQ-AgU0qTgk",
+//   authDomain: "first-smit-web.firebaseapp.com",
+//   databaseURL: "https://first-smit-web-default-rtdb.firebaseio.com",
+//   projectId: "first-smit-web",
+//   storageBucket: "first-smit-web.appspot.com",
+//   messagingSenderId: "119305629427",
+//   appId: "1:119305629427:web:a8fdce708682ba85ec9186",
+//   measurementId: "G-GZCV73MBTX"
+// }; 
+// firebase.initializeApp(firebaseConfig);
+
+//   // Function to update password
+//   document.getElementById("update-button").addEventListener("click", function() {
+//                 // Get values from input fields
+//                 var oldPassword = document.getElementById("oldPassword").value;
+//                 var newPassword = document.getElementById("newPassword").value;
+//                 var repeatPassword = document.getElementById("confirmPassword").value;
+    
+//                 // Check if newPassword and repeatPassword match
+                if (newPassword === repeatPassword) {
+                    // You can perform further actions here, like sending the data to a server.
+                    // For now, let's just log the values to the console.
+                    console.log("Old Password: " + oldPassword);
+                    console.log("New Password: " + newPassword);
+                    console.log("Repeat Password: " + confirmPassword);
+                } else {
+                    alert("New Password and Repeat Password do not match.");
+                }
+            });
+</script>
+ 
+</body>
+</html>
