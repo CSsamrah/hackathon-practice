@@ -1,0 +1,14 @@
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 200%;
+    text-shadow: -5px 6px 20px #ced906;
+}
+#bla{
+    font-family: Arial, Verdana, sans-serif;
+    line-height: 30px;
+    color: #450dac;}
+.box{
+height:300px;
+width:300px;
+background-color: #bbbbaa;
+  }
