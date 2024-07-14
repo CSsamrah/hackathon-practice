@@ -1,14 +1,30 @@
-h1{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 200%;
-    text-shadow: -5px 6px 20px #ced906;
+body{
+    background-color: rgb(0, 0, 0);
 }
-#bla{
-    font-family: Arial, Verdana, sans-serif;
-    line-height: 30px;
-    color: #450dac;}
-.box{
-height:300px;
-width:300px;
-background-color: #bbbbaa;
-  }
+#mainBox {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#515151;
+    width: 50%;
+    border-radius: 8px 8px 8px 8px;
+    margin-top: 10%;
+}
+#heading{
+    font-size: 400%;
+}
+#timer{
+    font-size: 400%;
+}
+button{
+    background-color: rgb(0, 0, 0);
+    padding: 2%;
+    padding-left: 3%;
+    border: 0;
+    border-radius: 5px 5px 5px 5px; 
+    color: #515151;
+    font-size: medium;
+}
+button:hover {
+    cursor: pointer;
+}
